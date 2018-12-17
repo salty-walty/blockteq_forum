@@ -7,7 +7,7 @@
 		  <%= @post.title %>
 
 		  <strong>Author:</strong>
-		  <%= @post.user.email %>
+		  <%= @post.user.username %>
 
 	</div>
 	
@@ -29,7 +29,7 @@
 	<div class="panel panel-default">
 	    <% @post.comments.each do |comment| %>
 	        <div class="panel-heading">
-		    <%= comment.user.email %> said...<br />
+		    <%= comment.user.username %> said...<br />
 	        </div>
 	        <div class="panel-body">
 	        	
