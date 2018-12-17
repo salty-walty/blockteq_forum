@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+	<div class="panel-heading">	
+		
+		  <strong>Title:</strong>
+		  <%= @post.title %>
+
+		  <strong>Author:</strong>
+		  <%= @post.author %>
+
+	</div>
+	
+	<div class="panel-body">
+		<p>
+		  <strong>Blog entry:</strong>
+		  <%= @post.blog_entry %>
+		</p>
+	</div>
+	
+	<div class="panel-footer">	
+		<%= link_to 'Edit', edit_post_path(@post) %> |
+		<%= link_to 'Back', posts_path %>
+
+	<div id="comments">
+
+    <%= render 'comments/form', comment: @comment %>
+
+	<div class="panel panel-default">
+	    <% @post.comments.each do |comment| %>
+	        <div class="panel-heading">
+		    <%= comment.author %> said...<br />
+	        </div>
+	        <div class="panel-body">
+	        	
+		    <%= comment.comment_entry %>
+	        </div>
+	    <% end %>
+	</div>
+
+	</div>
+
+	</div>
+</div>
