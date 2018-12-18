@@ -3,8 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.4'
 
+gem 'kaminari'
 gem 'devise'
-
 gem 'carrierwave'
 gem 'paperclip'
 gem 'bootstrap-sass'

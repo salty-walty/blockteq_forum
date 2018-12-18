@@ -8,13 +8,15 @@
 
 		  <strong>Author:</strong>
 		  <%= @post.user.username %>
+		  <%= image_tag @post.user.avatar.url, size:30 %>
 
 	</div>
 	
 	<div class="panel-body">
 		<p>
 		  <strong>Blog entry:</strong>
-		  <%= @post.blog_entry %>
+	
+		  <%= @post.blog_entry.html_safe %>
 		</p>
 	</div>
 	
