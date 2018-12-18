@@ -31,7 +31,7 @@
 	<div class="panel panel-default">
 	    <% @post.comments.each do |comment| %>
 	        <div class="panel-heading">
-		    <%= comment.user.username %> said...<br />
+		    <%= link_to comment.user.username, user_posts_path(name: comment.user.username) %> said...<br />
 	        </div>
 	        <div class="panel-body">
 	        	

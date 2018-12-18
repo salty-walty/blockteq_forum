@@ -23,7 +23,7 @@
           <% @posts.each do |post| %>
             <tr>
               <td><%= post.title %></td>
-              <td>by <%= post.user.username %></td>
+              <td>by <%= link_to post.user.username, user_posts_path(name: post.user.username) %></td>
               <td><%= post.blog_entry %></td>
               <td><%= link_to 'Show', post %></td>
               <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -31,12 +31,10 @@
             </tr>
           <% end %>
         </tbody>
-
     </table>
   </div>  
-
-
 </div>
+       <%= paginate @posts %>
 
 <br>
 
