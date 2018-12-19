@@ -5,6 +5,11 @@ class PostsController < ApplicationController
     @user = User.find_by(username: params[:name])
   end
 
+  def posts_by_category
+    @posts = Post.where(category_id: params[:category_id])
+    @category = Category.find(params[:category_id])
+  end
+
   # GET /posts
   # GET /posts.json
   def index
@@ -74,6 +79,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :author, :blog_entry, :user_id)
+      params.require(:post).permit(:title, :author, :blog_entry, :user_id, :category_id)
     end
 end

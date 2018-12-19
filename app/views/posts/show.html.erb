@@ -1,15 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <div class="panel panel-default">
-	<div class="panel-heading">	
-		
-		  <strong>Title:</strong>
-		  <%= @post.title %>
-
-		  <strong>Author:</strong>
-		  <%= @post.user.username %>
-		  <%= image_tag @post.user.avatar.url, size:30 %>
-
+	<div class="panel-heading">		  
+	  <h4><%= @post.category.name%></h4>
+	  <strong>Title:</strong>
+	  <%= @post.title %>
+	  <strong>Author:</strong>
+	  <%= @post.user.username %>
+	  <%= image_tag @post.user.avatar.url, size:30 %>
 	</div>
 	
 	<div class="panel-body">
