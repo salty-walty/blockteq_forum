@@ -10,5 +10,7 @@
   <%= @comment.comment_entry %>
 </p>
 
+
+<%= link_to 'Reply', new_comment_path, :parent_id %>
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>

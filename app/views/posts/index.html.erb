@@ -26,8 +26,6 @@
               <td>by <%= link_to post.user.username, user_posts_path(name: post.user.username) %></td>
               <td><%= post.blog_entry %></td>
               <td><%= link_to 'Show', post %></td>
-              <td><%= link_to 'Edit', edit_post_path(post) %></td>
-              <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>

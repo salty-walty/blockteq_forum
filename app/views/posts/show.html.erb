@@ -21,8 +21,11 @@
 	</div>
 	
 	<div class="panel-footer">	
-		<%= link_to 'Edit', edit_post_path(@post) %> |
-		<%= link_to 'Back', posts_path %>
+		<% if @post.id == current_user.id%>
+			<%= link_to 'Edit', edit_post_path(@post) %> |
+			<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %> |
+		<% end %>
+			<%= link_to 'Back', posts_path %>
 
 	<div id="comments">
 
@@ -36,6 +39,10 @@
 	        <div class="panel-body">
 	        	
 		    <%= comment.comment_entry %>
+	        </div>
+
+	        <div class="panel-footer">
+	        	<%= link_to 'Reply', new_comment_path(:parent_id => comment) %>
 	        </div>
 	    <% end %>
 	</div>
