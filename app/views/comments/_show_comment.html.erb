@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+
+<div class="panel-heading">	
+	<p>
+	  <strong>Author:</strong>
+	  <%= @comment.author %>
+	</p>
+</div>	
+
+<div class="panel-body">	
+	<p>
+	  <strong>Comment entry:</strong>
+	  <%= @comment.comment_entry %>
+	</p>
+</div>
+
+<div class="panel-footer">	
+	<%= link_to 'Reply', new_comment_path(:parent_id => comment)%>
+	<%= link_to 'Back', comments_path %>
+</div>
+</div>

@@ -6,4 +6,5 @@ module ApplicationHelper
 			"blank_profile.png"
 		end
 	end
+
 end

@@ -1,0 +1,21 @@
+
+<div class="panel panel-default">
+<% @post.comments.each do |comment| %>
+
+<div class="panel-heading">
+<%= link_to comment.user.username, user_posts_path(name: comment.user.username) %> said...<br />
+</div>
+
+<div class="panel-body">	
+	<p>
+	  <%= comment.comment_entry %>
+	</p>
+</div>
+
+<div class="panel-footer">	
+	<%= link_to 'Reply', new_comment_path(:parent_id => comment)%>
+	<%= link_to 'Back', comments_path %>
+
+<% end %>
+</div>
+</div>

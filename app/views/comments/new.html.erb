@@ -1,5 +1,7 @@
 <h1>New Comment</h1>
 
-<%= render 'form', comment: @comment %>
+<%= render @comment.parent if @comment.parent %>
+
+<%= render 'reply_form', comment: @comment, parent_id: @comment.parent_id, post_id: :parent_id%>
 
 <%= link_to 'Back', comments_path %>

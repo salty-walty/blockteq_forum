@@ -1,16 +1,3 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @comment.author %>
-</p>
-
-<p>
-  <strong>Comment entry:</strong>
-  <%= @comment.comment_entry %>
-</p>
-
-
-<%= link_to 'Reply', new_comment_path, :parent_id %>
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= render 'show_comment' %> 

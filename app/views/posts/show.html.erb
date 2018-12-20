@@ -7,7 +7,7 @@
 	  <%= @post.title %>
 	  <strong>Author:</strong>
 	  <%= @post.user.username %>
-	  <%= image_tag @post.user.avatar.url, size:30 %>
+	  <%= image_tag profile_pic(@post.user.avatar.url), size:30 %>
 	</div>
 	
 	<div class="panel-body">
@@ -25,27 +25,14 @@
 		<% end %>
 			<%= link_to 'Back', posts_path %>
 
-	<div id="comments">
+		<div id="comments">
 
-    <%= render 'comments/form', comment: @comment %>
+		    <%= render 'comments/form', comment: @comment %>
 
-	<div class="panel panel-default">
-	    <% @post.comments.each do |comment| %>
-	        <div class="panel-heading">
-		    <%= link_to comment.user.username, user_posts_path(name: comment.user.username) %> said...<br />
-	        </div>
-	        <div class="panel-body">
-	        	
-		    <%= comment.comment_entry %>
-	        </div>
+			<div class="panel panel-default">
+			    <%= nested_comments(Comment.arrange(:order => :created_at)) %>
+			</div>
 
-	        <div class="panel-footer">
-	        	<%= link_to 'Reply', new_comment_path(:parent_id => comment) %>
-	        </div>
-	    <% end %>
-	</div>
-
-	</div>
-
+		</div>
 	</div>
 </div>
