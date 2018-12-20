@@ -30,7 +30,7 @@
 		    <%= render 'comments/form', comment: @comment %>
 
 			<div class="panel panel-default">
-			    <%= nested_comments(Comment.arrange(:order => :created_at)) %>
+			    <%= nested_comments(@post.comments.arrange(:order => :created_at)) %>
 			</div>
 
 		</div>

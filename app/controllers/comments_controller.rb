@@ -12,6 +12,11 @@ class CommentsController < ApplicationController
   def show
   end
   
+  def arrange
+    @comments = Comment.arrange(:order => :created_at)
+  end
+
+
 
   # GET /comments/new
   def new

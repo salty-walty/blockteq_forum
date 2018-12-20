@@ -2,6 +2,6 @@
 
 <%= render @comment.parent if @comment.parent %>
 
-<%= render 'reply_form', comment: @comment, parent_id: @comment.parent_id, post_id: :parent_id%>
+<%= render 'reply_form', comment: @comment, parent_id: @comment.parent_id%>
 
 <%= link_to 'Back', comments_path %>
